@@ -16,9 +16,12 @@ function TodoItem({ todo }) {
               style={{ color: "#ff3f34", size: "8px" }}
             />
             <EditIcon
-              onClick={() => {
-                 todo.title = prompt("Donner le nouveau titre", dispatch(edit(todo.id)));
-                todo.title.trim()?alert('la modification supprime tt les données de votre Todo'):prompt("Vous avez donner un titre vide essayez une autre fois", dispatch(edit(todo.id)));
+              onClick={() =>
+              {
+               todo.title= prompt("Donner le nouveau titre",todo.title);
+                todo.title.trim()?
+                dispatch(edit(todo.id)):
+                prompt("Donner le nouveau titre",todo.title);
 
               }	}
             />

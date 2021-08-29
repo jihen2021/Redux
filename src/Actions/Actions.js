@@ -26,10 +26,10 @@ export const complete =(id)=> {
     }
 };
 
-export const search =(title)=> {
+export const search =(x)=> {
     return {
         type:'SEARCH' ,
-        payload:title
+        payload:x
       
     }
 };

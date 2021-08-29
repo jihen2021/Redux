@@ -28,7 +28,7 @@ switch (type) {
     case 'TOGGLE_COMPLETE':
         return {...state,todos:state.todos.map(elt=>elt.id===payload ? {...elt,completed:!elt.completed}:elt)};
     case 'SEARCH':
-      return {...state,todos:state.todos.filter(elt=>elt.title.toLowerCase().match(payload.toLowerCase().trim()))};
+      return {...state,todos:state.todos.filter(elt=>elt.title.toLowerCase().includes(payload.toLowerCase().trim()))};
     default:
         return state;
 }

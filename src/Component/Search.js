@@ -5,20 +5,22 @@ import { search } from '../Actions/Actions'
 
 function Search() {
     const dispatch = useDispatch()
-    const [title, setTitle] = useState('')
+    const [sx, setSx] = useState('')
+
+
+const HandlChange=(e)=>{
+    e.preventDefault()
+    setSx(e.target.value)
+    dispatch(search(sx))
+}
+
     return (
         <div>
+            {/* <input type="text" value={sx}onChange={HandlChange}/> */}
 
-
-<form onSubmit={
-    (e)=>{dispatch(search(title))
-    e.preventDefault();
-   }}>
-      <TextField id="standard-basic" label="Find Todo" onChange={
-          (e)=>setTitle(e.target.value)}/>
-      
-    </form>
-            
+      <TextField id="standard-basic" label="Find Todo" 
+      value={sx}
+       onChange={HandlChange}/>
         </div>
     )
 }
