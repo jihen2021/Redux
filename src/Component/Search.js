@@ -1,28 +1,26 @@
-import { TextField } from '@material-ui/core'
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { search } from '../Actions/Actions'
+// import { TextField } from '@material-ui/core'
+// import React, { useState } from 'react'
+// import { useDispatch } from 'react-redux'
+// import { search } from '../Actions/Actions'
 
-function Search() {
-    const dispatch = useDispatch()
-    const [sx, setSx] = useState('')
+// function Search() {
 
+//     const dispatch = useDispatch()
+//     const [sx, setSx] = useState('')
+// const HandlChange=(e)=>{
+//     setSx(e.target.value)
+//     dispatch(search(sx))
+// }
 
-const HandlChange=(e)=>{
-    e.preventDefault()
-    setSx(e.target.value)
-    dispatch(search(sx))
-}
+//    return (
+//         <div>
+//             {/* <input type="text" value={sx}onChange={HandlChange}/> */}
 
-    return (
-        <div>
-            {/* <input type="text" value={sx}onChange={HandlChange}/> */}
+//       <TextField id="standard-basic" label="Find Todo" 
+//       value={sx}
+//        onChange={HandlChange}/>
+//         </div>
+//     )
+// }
 
-      <TextField id="standard-basic" label="Find Todo" 
-      value={sx}
-       onChange={HandlChange}/>
-        </div>
-    )
-}
-
-export default Search
+// export default Search

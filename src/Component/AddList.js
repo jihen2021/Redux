@@ -24,7 +24,7 @@ const dispatch = useDispatch()
 					onChange={(e)=>setNewTodo(e.target.value)}
 				
 				></input>
-				<button type='submit' className='btn btn-primary mb-2 btn1 sofia'  >
+				<button type='submit' className='btn btn1   sofia'  >
 					ADD
 	
 				</button>

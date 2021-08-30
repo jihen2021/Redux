@@ -7,15 +7,17 @@ function TodoItem({ todo }) {
   const dispatch = useDispatch();
   return (
     <div>
-      <li className="list-group-item border">
+     
         <div className="d-flex justify-content-between sofia">
           {todo.title}
           <div>
+            
             <DeleteForeverIcon
               onClick={() => dispatch(dlete(todo.id))}
               style={{ color: "#ff3f34", size: "8px" }}
             />
-            <EditIcon
+           
+            <i class="edit outline icon"
               onClick={() =>
               {
                todo.title= prompt("Donner le nouveau titre",todo.title);
@@ -30,9 +32,10 @@ function TodoItem({ todo }) {
               onClick={() => dispatch(complete(todo.id))}
               className={todo.completed ? "green" : "red"}
             />
+          
           </div>
         </div>
-      </li>
+   
     </div>
   );
 }

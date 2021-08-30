@@ -1,37 +1,46 @@
-const initialState={
-    todos:[
-        {id:1,title:"react",completed:true},
-        {id:2,title:"css",completed:false},
-        {id:3,title:"html",completed:true},
-
-    ],
+const initialState = {
+  todos: [
+    { id: 1, title: " chekpoint redux", completed: true },
+    { id: 2, title: " chekpoint css", completed: false },
+    { id: 3, title: "chekpoint html", completed: true },
+  ],
+  status: "All",
 };
 
-const TodoReducer=(state=initialState,{type,payload})=>{
+const TodoReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "ADD":
+      return {
+        ...state,
+        todos: [...state.todos, payload],
+      };
 
-switch (type) {
-    case 'ADD':return{
-     ...state,todos:[...state.todos,payload]
-    };
-        
-       case 'DELETE':return{
-           ...state,todos:state.todos.filter((todo)=>todo.id!==payload)
-       };
+    case "DELETE":
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.id !== payload),
+      };
+    case "EDIT":
+      return {
+        ...state,
+        todos: state.todos.map((elt) =>
+          elt.id === payload ? { ...elt, title: elt.title } : elt
+        ),
+      };
 
-       
-       case 'EDIT':return{
-       ...state,
-       todos:state.todos.map(elt=>elt.id===payload ? {...elt,title:elt.title}:elt)
-
-    };
-
-    case 'TOGGLE_COMPLETE':
-        return {...state,todos:state.todos.map(elt=>elt.id===payload ? {...elt,completed:!elt.completed}:elt)};
-    case 'SEARCH':
-      return {...state,todos:state.todos.filter(elt=>elt.title.toLowerCase().includes(payload.toLowerCase().trim()))};
-    default:
-        return state;
-}
-
-}
-export default TodoReducer
+    case "TOGGLE_COMPLETE":
+      return {
+        ...state,
+        todos: state.todos.map((elt) =>
+          elt.id === payload ? { ...elt, completed: !elt.completed } : elt
+        ),
+      };
+    
+    
+    case "FIND":
+      return { ...state, status: payload };
+      default:
+      return state;
+  }
+};
+export default TodoReducer;

@@ -2,11 +2,19 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import TodoItem from './TodoItem'
 function TodoList() {
+
+
   const todos = useSelector(state => state.todos)
-    
+  const status= useSelector(state => state.status)
     return (
         <div className='container '>
-            {todos.map((todo)=><TodoItem key={todos.id} todo={todo}/>)}
+            { 
+            status==='All'?
+            todos.map((todo)=><TodoItem key={todos.id} todo={todo}/>):
+            status==='Done'?
+            todos.filter(elt=>elt.completed===true).map((todo)=><TodoItem key={todos.id} todo={todo}/>):
+            todos.filter(elt=>elt.completed===false).map((todo)=><TodoItem key={todos.id} todo={todo}/>)
+        }
              
         </div>
     )

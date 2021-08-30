@@ -33,3 +33,10 @@ export const search =(x)=> {
       
     }
 };
+export const find =(status)=> {
+    return {
+        type:'FIND' ,
+       payload:status
+      
+    }
+};

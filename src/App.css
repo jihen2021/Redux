@@ -2,19 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
 
 .sofia{
-    font-family: 'Sofia', cursive;
+    font-family: 'Sofia'!important ;
+    
+    color: #e1b12c;
+    size: 30px !important;
+    
 }
 .sofia2{
     font-family: 'Sofia', cursive;
     size: 10px;  
-    color:blue
+    color:#7f8fa6;
+    align-content: center;
 }
 .form{
     display: flex;
     justify-content: flex-start;
 }
 .btn1{
-    background-color: blue;
+    background-color: #e84118 !important;
 }
 .red{
     color:crimson
